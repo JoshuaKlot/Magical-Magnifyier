@@ -11,7 +11,7 @@ public class MagnifyingGlass : MonoBehaviour
     public GameObject beamShrinkPrefab;
     public Transform bulletSpawn;
     public float beamSpeed = 30f;
-
+    public GameObject player;
     private ShootingMode currentMode;
     public enum ShootingMode
     {
@@ -68,10 +68,12 @@ public class MagnifyingGlass : MonoBehaviour
         else
         {
             MainLight.enabled = false; // Disable the light
-
+            
             // Change the material color to white
             this.gameObject.GetComponent<Renderer>().material.color = Color.white;
         }
+
+
     }
 
 

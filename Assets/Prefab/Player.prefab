@@ -408,6 +408,7 @@ MonoBehaviour:
   beamShrinkPrefab: {fileID: 6281406958218082050, guid: 64ba4975e167cff4e94240898882b7ef, type: 3}
   bulletSpawn: {fileID: 6469960026980131878}
   beamSpeed: 30
+  player: {fileID: 6469960024929794324}
 --- !u!1 &6469960026023112023
 GameObject:
   m_ObjectHideFlags: 0
