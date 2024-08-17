@@ -14,7 +14,7 @@ public class Intercatable : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundDistance = 0.1f;
     [SerializeField] private float defaultPushDistance = 1f; // Distance the box will move when pushed
-    [SerializeField] private float pushDuration = 0.03f; // Duration of the smooth push
+    [SerializeField] private float pushSpeed = 0.03f; // Duration of the smooth push
     private int pushDistance;
     private bool isGrounded;
     private Rigidbody rb;
@@ -114,10 +114,10 @@ public class Intercatable : MonoBehaviour
         Vector3 startPosition = transform.position;
         Vector3 endPosition = startPosition + pushDirection.normalized * pushDistance;
         float elapsedTime = 0f;
-
-        while (elapsedTime < pushDuration)
+        float timeMoving = pushDistance * pushSpeed;
+        while (elapsedTime < timeMoving)
         {
-            transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / pushDuration);
+            transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / timeMoving);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

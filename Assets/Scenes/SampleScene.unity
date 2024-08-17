@@ -168,7 +168,7 @@ MonoBehaviour:
     m_Bits: 64
   groundDistance: 0.1
   defaultPushDistance: 1
-  pushDuration: 0.2
+  pushSpeed: 0.5
 --- !u!54 &170858182
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
     m_Bits: 64
   groundDistance: 0.1
   defaultPushDistance: 1
-  pushDuration: 0.2
+  pushSpeed: 0.03
 --- !u!1 &1183671560
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
     m_Bits: 64
   groundDistance: 0.1
   defaultPushDistance: 10
-  pushDuration: 0.2
+  pushSpeed: 0.03
 --- !u!54 &1832933667
 Rigidbody:
   m_ObjectHideFlags: 0
