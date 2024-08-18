@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Intercatable : MonoBehaviour
@@ -21,27 +22,17 @@ public class Intercatable : MonoBehaviour
     private const float detectionThreshold = 0.1f; // Adjust as necessary
     private Coroutine resetKinematicCoroutine;
 
-    private Vector3 targetVelocity;
-
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         pushDistance = (int)(defaultPushDistance - (transform.localScale.x * weightMultiplier));
-        if (pushDistance < 0)
+            if(pushDistance<0)
         {
             pushDistance = 0;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (targetVelocity != Vector3.zero)
-        {
-            rb.velocity = targetVelocity;
         }
     }
 
@@ -89,9 +80,7 @@ public class Intercatable : MonoBehaviour
     {
         yield return new WaitForSeconds(0.03f);
         rb.isKinematic = false;
-        targetVelocity = Vector3.zero; // Reset velocity when no longer moving
         resetKinematicCoroutine = null;
-        
     }
 
     public void OnCollisionEnter(Collision col)
@@ -99,7 +88,7 @@ public class Intercatable : MonoBehaviour
         if (col.gameObject.CompareTag("Player") && Pushable)
         {
             Vector3 pushDirection = GetPushDirection(col);
-            MoveBoxInDirection(pushDirection);
+            StartCoroutine(MoveBoxSmoothly(pushDirection));
         }
     }
 
@@ -118,11 +107,24 @@ public class Intercatable : MonoBehaviour
         }
     }
 
-    private void MoveBoxInDirection(Vector3 pushDirection)
+    private IEnumerator MoveBoxSmoothly(Vector3 pushDirection)
     {
-        rb.isKinematic = false;
-        targetVelocity = pushDirection.normalized * (pushDistance / pushSpeed);
-        Debug.Log(pushDistance);
+        rb.isKinematic = true;
+
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = startPosition + pushDirection.normalized * pushDistance;
+        float elapsedTime = 0f;
+        float timeMoving=pushDistance*pushSpeed;
+        while (elapsedTime < timeMoving)
+        {
+
+            transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / timeMoving);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = endPosition;
+
         StartKinematicResetCoroutine();
     }
 }
