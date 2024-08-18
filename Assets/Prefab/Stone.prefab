@@ -139,4 +139,4 @@ MonoBehaviour:
     m_Bits: 0
   groundDistance: 0.1
   defaultPushDistance: 20
-  pushSpeed: 0.03
+  pushSpeed: 0.5
