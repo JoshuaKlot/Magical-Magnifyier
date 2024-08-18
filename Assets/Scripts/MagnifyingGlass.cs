@@ -56,6 +56,7 @@ public class MagnifyingGlass : MonoBehaviour
         {
             MainLight.enabled = false;
             this.gameObject.GetComponent<Renderer>().material.color = Color.white;
+            image.color = Color.white;
         }
     }
 
