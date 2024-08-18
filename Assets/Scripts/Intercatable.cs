@@ -1,4 +1,5 @@
 using System.Collections;
+
 using UnityEngine;
 
 public class Intercatable : MonoBehaviour
@@ -116,6 +117,20 @@ public class Intercatable : MonoBehaviour
         resetKinematicCoroutine = null;
     }
 
+    private Vector3 GetPushDirection(Collision col)
+    {
+        Vector3 direction = col.transform.position - transform.position;
+        direction.y = 0; // Ignore vertical component
+
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+        {
+            return direction.x > 0 ? Vector3.left : Vector3.right;
+        }
+        else
+        {
+            return direction.z > 0 ? Vector3.back : Vector3.forward;
+        }
+    }
     private void CheckIfGrounded()
     {
         // Use a raycast to check if the object is grounded
@@ -134,13 +149,17 @@ public class Intercatable : MonoBehaviour
 
         if (col.gameObject.CompareTag("Interactable") && Pushable)
         {
+
             Intercatable otherInteractable = col.gameObject.GetComponent<Intercatable>();
             StopMovement();
+            Debug.Log("Touch");
             col.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             if (otherInteractable != null && otherInteractable.Pushable)
             {
+                otherInteractable.pushDirection = GetPushDirection(col);
+                otherInteractable.startPosition = transform.position;
                 // Push the other interactable object in the same direction
-                otherInteractable.MoveBoxInDirection(pushDirection);
+                otherInteractable.MoveBoxInDirection(otherInteractable.pushDirection);
             }
 
             // Stop the current object's movement after initiating the push of the other object
@@ -149,20 +168,6 @@ public class Intercatable : MonoBehaviour
     }
 
 
-    private Vector3 GetPushDirection(Collision col)
-    {
-        Vector3 direction = col.transform.position - transform.position;
-        direction.y = 0; // Ignore vertical component
-
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
-        {
-            return direction.x > 0 ? Vector3.left : Vector3.right;
-        }
-        else
-        {
-            return direction.z > 0 ? Vector3.back : Vector3.forward;
-        }
-    }
 
     private void MoveBoxInDirection(Vector3 pushDirection)
     {

@@ -2452,6 +2452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3052248379503323054, guid: e7f93a30e4a2e9841a432d964c5f89a9, type: 3}
+      propertyPath: NextScene
+      value: Stage 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3052248379503323055, guid: e7f93a30e4a2e9841a432d964c5f89a9, type: 3}
       propertyPath: m_Name
       value: Goal

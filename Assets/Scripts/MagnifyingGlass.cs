@@ -1,100 +1,90 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class MagnifyingGlass : MonoBehaviour
 {
-    [SerializeField]private Light MainLight;
+    [SerializeField] private Light MainLight;
+    [SerializeField] private Image image;
     public GameObject beamGrowPrefab;
     public GameObject beamShrinkPrefab;
     public Transform bulletSpawn;
     public float beamSpeed = 30f;
     public GameObject player;
     private ShootingMode currentMode;
+
     public enum ShootingMode
     {
         grow,
         shrink
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        if (MainLight == null)
+        {
+            MainLight = GetComponentInChildren<Light>();
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
             MainLight.tag = "Grow";
-            MainLight.color = Color.green; // Use predefined colors
-            MainLight.enabled = true; // Enable the light
-
-            // Change the material color to green
+            MainLight.color = Color.green;
+            image.color = Color.green;
+            MainLight.enabled = true;
             this.gameObject.GetComponent<Renderer>().material.color = Color.green;
 
-            RaycastHit hit;
-            if (Physics.Raycast(MainLight.transform.position, MainLight.transform.forward, out hit, MainLight.range))
-            {
-                Intercatable interactable = hit.collider.GetComponent<Intercatable>();
-                if (interactable != null && interactable.Shrinkable == true)
-                {
-                    interactable.Grow();
-                }
-            }
+            RaycastAndInteract();
         }
         else if (Input.GetKey(KeyCode.Mouse1))
         {
             MainLight.tag = "Shrink";
-            MainLight.color = Color.magenta; // Use predefined colors
-            MainLight.enabled = true; // Enable the light
-
-            // Change the material color to magenta
+            MainLight.color = Color.magenta;
+            image.color= Color.magenta;
+            MainLight.enabled = true;
             this.gameObject.GetComponent<Renderer>().material.color = Color.magenta;
 
-            RaycastHit hit;
-            if (Physics.Raycast(MainLight.transform.position, MainLight.transform.forward, out hit, MainLight.range))
+            RaycastAndInteract();
+        }
+        else
+        {
+            MainLight.enabled = false;
+            this.gameObject.GetComponent<Renderer>().material.color = Color.white;
+        }
+    }
+
+    private void RaycastAndInteract()
+    {
+        // Get the center of the screen
+        Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+
+        // Adjust the spotlight direction to follow the camera
+        MainLight.transform.position = Camera.main.transform.position;
+        MainLight.transform.rotation = Camera.main.transform.rotation;
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, MainLight.range))
+        {
+            Intercatable interactable = hit.collider.GetComponent<Intercatable>();
+            if (interactable != null)
             {
-                Intercatable interactable = hit.collider.GetComponent<Intercatable>();
-                if (interactable != null && interactable.Shrinkable == true)
+                if (MainLight.tag == "Grow" && interactable.Shrinkable)
+                {
+                    interactable.Grow();
+                }
+                else if (MainLight.tag == "Shrink" && interactable.Shrinkable)
                 {
                     interactable.Shrink();
                 }
             }
         }
-        else
-        {
-            MainLight.enabled = false; // Disable the light
-            
-            // Change the material color to white
-            this.gameObject.GetComponent<Renderer>().material.color = Color.white;
-        }
-
-
-    }
-
-
-
-    void FireWeapon()
-    {
-
-        GameObject beam = beamGrowPrefab;
-        if (currentMode == ShootingMode.grow)
-            beam = beamGrowPrefab;
-        if (currentMode == ShootingMode.shrink)
-            beam = beamShrinkPrefab;
-
-        // Instantiate the bullet with the same rotation as the bulletSpawn
-        GameObject bullet = Instantiate(beam, bulletSpawn.position, Quaternion.identity);
-
-        // Rotate the bullet 90 degrees on the x-axis
-        bullet.transform.Rotate(90f, 0f, 0f);
-
-        // Add force in the forward direction of the bullet (which now considers the rotation of bulletSpawn)
-        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * beamSpeed, ForceMode.Impulse);
     }
 
 }

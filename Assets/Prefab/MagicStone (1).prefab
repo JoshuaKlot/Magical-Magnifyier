@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shrinkable: 0
   Pushable: 1
-  weightMultiplier: 5
+  weightMultiplier: 3
   upperLimit: 7
   lowerLimit: 1
   thresholdMass: 0

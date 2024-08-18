@@ -329,6 +329,7 @@
 "Assets/Scripts/Beam.cs"
 "Assets/Scripts/Intercatable.cs"
 "Assets/Scripts/MagnifyingGlass.cs"
+"Assets/Scripts/MouseMovement.cs"
 "Assets/Scripts/NextLevel.cs"
 "Assets/Scripts/PlayerMovement.cs"
 -langversion:9.0

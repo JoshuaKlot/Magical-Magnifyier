@@ -129,8 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shrinkable: 1
   Pushable: 1
-  weightMultiplier: 5
-  upperLimit: 7
+  weightMultiplier: 3
+  upperLimit: 10
   lowerLimit: 1
   thresholdMass: 0
   gravity: -9.81
