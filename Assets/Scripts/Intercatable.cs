@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Intercatable : MonoBehaviour
@@ -21,18 +20,53 @@ public class Intercatable : MonoBehaviour
     private bool isLit;
     private const float detectionThreshold = 0.1f; // Adjust as necessary
     private Coroutine resetKinematicCoroutine;
+    private Vector3 targetVelocity;
+    private Vector3 pushDirection;
+    private Vector3 startPosition;
+    private bool isPushing;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         pushDistance = (int)(defaultPushDistance - (transform.localScale.x * weightMultiplier));
-            if(pushDistance<0)
+        if (pushDistance < 0)
         {
             pushDistance = 0;
+        }
+
+        CheckIfGrounded();
+
+        if (isPushing)
+        {
+            // Calculate the distance moved since the push started
+            float distanceMoved = Vector3.Distance(startPosition, transform.position);
+
+            // Stop the object if it has moved the desired distance or overshot it
+            if (distanceMoved >= pushDistance)
+            {
+                StopMovement();
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (targetVelocity != Vector3.zero && isPushing)
+        {
+            rb.velocity = targetVelocity;
+        }
+
+        if (isGrounded)
+        {
+            rb.isKinematic = true;
+        }
+        else
+        {
+            rb.isKinematic = false;
         }
     }
 
@@ -79,18 +113,41 @@ public class Intercatable : MonoBehaviour
     private IEnumerator ResetKinematic()
     {
         yield return new WaitForSeconds(0.03f);
-        rb.isKinematic = false;
         resetKinematicCoroutine = null;
+    }
+
+    private void CheckIfGrounded()
+    {
+        // Use a raycast to check if the object is grounded
+        RaycastHit hit;
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, groundDistance, groundLayer);
     }
 
     public void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Player") && Pushable)
         {
-            Vector3 pushDirection = GetPushDirection(col);
-            StartCoroutine(MoveBoxSmoothly(pushDirection));
+            pushDirection = GetPushDirection(col);
+            startPosition = transform.position;
+            MoveBoxInDirection(pushDirection);
+        }
+
+        if (col.gameObject.CompareTag("Interactable") && Pushable)
+        {
+            Intercatable otherInteractable = col.gameObject.GetComponent<Intercatable>();
+            StopMovement();
+            col.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            if (otherInteractable != null && otherInteractable.Pushable)
+            {
+                // Push the other interactable object in the same direction
+                otherInteractable.MoveBoxInDirection(pushDirection);
+            }
+
+            // Stop the current object's movement after initiating the push of the other object
+            
         }
     }
+
 
     private Vector3 GetPushDirection(Collision col)
     {
@@ -107,24 +164,19 @@ public class Intercatable : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveBoxSmoothly(Vector3 pushDirection)
+    private void MoveBoxInDirection(Vector3 pushDirection)
     {
-        rb.isKinematic = true;
+        rb.isKinematic = false;
+        targetVelocity = pushDirection.normalized * (pushDistance / pushSpeed);
+        isPushing = true;
+    }
 
-        Vector3 startPosition = transform.position;
-        Vector3 endPosition = startPosition + pushDirection.normalized * pushDistance;
-        float elapsedTime = 0f;
-        float timeMoving=pushDistance*pushSpeed;
-        while (elapsedTime < timeMoving)
-        {
-
-            transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / timeMoving);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.position = endPosition;
-
+    private void StopMovement()
+    {
+        targetVelocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
+        isPushing = false;
         StartKinematicResetCoroutine();
     }
 }
+

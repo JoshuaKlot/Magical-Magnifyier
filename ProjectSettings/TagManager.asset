@@ -8,6 +8,7 @@ TagManager:
   - Shrink
   - Glass
   - Water
+  - Interactable
   layers:
   - Default
   - TransparentFX
