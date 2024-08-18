@@ -16381,6 +16381,8 @@ struct U3CMoveBoxSmoothlyU3Ed__25_t7387C5D547F2B186A85CC50F31772DF02047EDCD  : p
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___U3CendPositionU3E5__3_5;
 	// System.Single Intercatable/<MoveBoxSmoothly>d__25::<elapsedTime>5__4
 	float ___U3CelapsedTimeU3E5__4_6;
+	// System.Single Intercatable/<MoveBoxSmoothly>d__25::<timeMoving>5__5
+	float ___U3CtimeMovingU3E5__5_7;
 };
 
 // UnityEngine.Mesh/MeshData
@@ -18959,8 +18961,8 @@ struct Intercatable_t941BEF0CF93533B685B2FB6B8877481ADEEB34A1  : public MonoBeha
 	float ___groundDistance_12;
 	// System.Single Intercatable::defaultPushDistance
 	float ___defaultPushDistance_13;
-	// System.Single Intercatable::pushDuration
-	float ___pushDuration_14;
+	// System.Single Intercatable::pushSpeed
+	float ___pushSpeed_14;
 	// System.Int32 Intercatable::pushDistance
 	int32_t ___pushDistance_15;
 	// System.Boolean Intercatable::isGrounded
@@ -18986,8 +18988,10 @@ struct MagnifyingGlass_tAB53068D3856CCC8ABA4B19ACFFF36A952D9E431  : public MonoB
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___bulletSpawn_7;
 	// System.Single MagnifyingGlass::beamSpeed
 	float ___beamSpeed_8;
+	// UnityEngine.GameObject MagnifyingGlass::player
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___player_9;
 	// MagnifyingGlass/ShootingMode MagnifyingGlass::currentMode
-	int32_t ___currentMode_9;
+	int32_t ___currentMode_10;
 };
 
 // System.MissingFieldException
