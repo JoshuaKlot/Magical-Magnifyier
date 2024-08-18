@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class MagnifyingGlass : MonoBehaviour
 {
     [SerializeField] private Light MainLight;
@@ -46,11 +45,15 @@ public class MagnifyingGlass : MonoBehaviour
         {
             MainLight.tag = "Shrink";
             MainLight.color = Color.magenta;
-            image.color= Color.magenta;
+            image.color = Color.magenta;
             MainLight.enabled = true;
             this.gameObject.GetComponent<Renderer>().material.color = Color.magenta;
 
             RaycastAndInteract();
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse2)) // Check if middle mouse button is pressed
+        {
+            PerformShortRaycast();
         }
         else
         {
@@ -88,4 +91,21 @@ public class MagnifyingGlass : MonoBehaviour
         }
     }
 
+    private void PerformShortRaycast()
+    {
+        // Raycast from the camera to the center of the screen
+        Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, MainLight.range))
+        {
+            Intercatable interactable = hit.collider.GetComponent<Intercatable>();
+            if (interactable != null)
+            {
+                // Simulate a collision with the player
+                interactable.SimulateCollision(player);
+            }
+        }
+    }
 }

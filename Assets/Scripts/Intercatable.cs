@@ -1,11 +1,10 @@
 using System.Collections;
-
 using UnityEngine;
 
 public class Intercatable : MonoBehaviour
 {
     [SerializeField] public bool Shrinkable;
-    [SerializeField] private bool Pushable;
+    [SerializeField] public bool Pushable;
     [SerializeField] private float weightMultiplier;
     [SerializeField] private float upperLimit;
     [SerializeField] private float lowerLimit;
@@ -22,8 +21,8 @@ public class Intercatable : MonoBehaviour
     private const float detectionThreshold = 0.1f; // Adjust as necessary
     private Coroutine resetKinematicCoroutine;
     private Vector3 targetVelocity;
-    private Vector3 pushDirection;
-    private Vector3 startPosition;
+    public Vector3 pushDirection;
+    public Vector3 startPosition;
     private bool isPushing;
 
     void Start()
@@ -117,9 +116,9 @@ public class Intercatable : MonoBehaviour
         resetKinematicCoroutine = null;
     }
 
-    private Vector3 GetPushDirection(Collision col)
+    public Vector3 GetPushDirection(Vector3 colliderPosition)
     {
-        Vector3 direction = col.transform.position - transform.position;
+        Vector3 direction = colliderPosition - transform.position;
         direction.y = 0; // Ignore vertical component
 
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
@@ -140,32 +139,42 @@ public class Intercatable : MonoBehaviour
 
     public void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag("Player") && Pushable)
+        
+        if (col.gameObject.CompareTag("Interactable") && Pushable)
         {
-            pushDirection = GetPushDirection(col);
+            Debug.Log("Interactable touch detected.");
+            Intercatable otherInteractable = col.gameObject.GetComponent<Intercatable>();
+            if (otherInteractable != null && otherInteractable.Pushable)
+            {
+                Debug.Log("Pushing another interactable object.");
+                otherInteractable.pushDirection = GetPushDirection(transform.position);
+                otherInteractable.startPosition = transform.position;
+                otherInteractable.MoveBoxInDirection(otherInteractable.pushDirection);
+            }
+            StopMovement();
+        }
+    }
+    public void SimulateCollision(GameObject colliderObject)
+    {
+        if (colliderObject.CompareTag("Player") && Pushable)
+        {
+            pushDirection = GetPushDirection(colliderObject.transform.position);
             startPosition = transform.position;
             MoveBoxInDirection(pushDirection);
         }
-
-        if (col.gameObject.CompareTag("Interactable") && Pushable)
+        else if (colliderObject.CompareTag("Interactable") && Pushable)
         {
-
-            Intercatable otherInteractable = col.gameObject.GetComponent<Intercatable>();
-            StopMovement();
-            Debug.Log("Touch");
-            col.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Intercatable otherInteractable = colliderObject.GetComponent<Intercatable>();
             if (otherInteractable != null && otherInteractable.Pushable)
             {
-                otherInteractable.pushDirection = GetPushDirection(col);
+                otherInteractable.pushDirection = GetPushDirection(colliderObject.transform.position);
                 otherInteractable.startPosition = transform.position;
-                // Push the other interactable object in the same direction
                 otherInteractable.MoveBoxInDirection(otherInteractable.pushDirection);
             }
-
-            // Stop the current object's movement after initiating the push of the other object
-            
+            StopMovement();
         }
     }
+
 
 
 
