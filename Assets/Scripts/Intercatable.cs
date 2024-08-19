@@ -72,16 +72,20 @@ public class Intercatable : MonoBehaviour
 
     private void MaintainGroundContact()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, groundLayer))
+        if (isGrounded)
         {
-            float groundHeight = hit.point.y;
-            float objectHeight = transform.position.y - transform.localScale.y / 2;
-            float difference = groundHeight - objectHeight;
+            // Lock the Y position to prevent falling through the ground
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
-            transform.position += Vector3.up * difference;
+            // Optional: Slightly adjust the object's position if it's not perfectly on the ground
+            transform.position = new Vector3(transform.position.x, Mathf.Max(transform.position.y, groundDistance), transform.position.z);
+        }
+        else
+        {
+            rb.isKinematic = false; // Ensure physics is active if not grounded
         }
     }
+
 
     public void Grow()
     {
@@ -149,10 +153,17 @@ public class Intercatable : MonoBehaviour
     }
     private void CheckIfGrounded()
     {
-        // Use a raycast to check if the object is grounded
-        RaycastHit hit;
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, groundDistance, groundLayer);
+        float radius = transform.localScale.x / 2;
+        float halfHeight = transform.localScale.y / 2;
+
+        // Use a capsule cast for better ground detection
+        isGrounded = Physics.CapsuleCast(transform.position - Vector3.up * halfHeight,
+                                         transform.position + Vector3.up * halfHeight,
+                                         radius, Vector3.down, groundDistance, groundLayer);
+
+        Debug.DrawRay(transform.position, Vector3.down * (halfHeight + groundDistance), isGrounded ? Color.green : Color.red);
     }
+
 
     public void OnCollisionEnter(Collision col)
     {

@@ -1,3 +1,4 @@
+
 using System.Collections;
 
 using UnityEngine;
@@ -89,12 +90,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isMoving && isGrounded)
                 {
+                    // Randomize the pitch of the footstep sound
+                    footsteps[i].pitch = Random.Range(0.8f, 1.2f); // Adjust the range as needed
+
                     footsteps[i].Play();
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.5f); // You might want to adjust this delay
                 }
             }
         }
 
         isPlayingFootsteps = false;
     }
+
 }
