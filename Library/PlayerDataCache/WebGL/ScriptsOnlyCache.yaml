@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Beam
+    - GroundCheck
     - Intercatable
     - MagnifyingGlass
     - MouseMovement
@@ -79,6 +80,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5442}
     - Class: 114
       Script: {instanceID: 52744}
+    - Class: 114
+      Script: {instanceID: 71488}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -150,6 +153,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5442}
     - Class: 114
       Script: {instanceID: 52744}
+    - Class: 114
+      Script: {instanceID: 71488}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -221,6 +226,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5442}
     - Class: 114
       Script: {instanceID: 52744}
+    - Class: 114
+      Script: {instanceID: 71488}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -292,6 +299,154 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5442}
     - Class: 114
       Script: {instanceID: 52744}
+    - Class: 114
+      Script: {instanceID: 71488}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Stage 4.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1556}
+    - Class: 114
+      Script: {instanceID: 1614}
+    - Class: 114
+      Script: {instanceID: 1714}
+    - Class: 114
+      Script: {instanceID: 1846}
+    - Class: 114
+      Script: {instanceID: 2738}
+    - Class: 114
+      Script: {instanceID: 2838}
+    - Class: 114
+      Script: {instanceID: 4158}
+    - Class: 114
+      Script: {instanceID: 5442}
+    - Class: 114
+      Script: {instanceID: 52744}
+    - Class: 114
+      Script: {instanceID: 71488}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Stage 5.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1556}
+    - Class: 114
+      Script: {instanceID: 1614}
+    - Class: 114
+      Script: {instanceID: 1714}
+    - Class: 114
+      Script: {instanceID: 1846}
+    - Class: 114
+      Script: {instanceID: 2738}
+    - Class: 114
+      Script: {instanceID: 2838}
+    - Class: 114
+      Script: {instanceID: 4158}
+    - Class: 114
+      Script: {instanceID: 5442}
+    - Class: 114
+      Script: {instanceID: 52744}
+    - Class: 114
+      Script: {instanceID: 71488}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 136
@@ -1119,10 +1274,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MouseMovement
+  - hash:
+      serializedVersion: 2
+      Hash: 0c0566d7c4d8558debd8f70b5b1086fb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GroundCheck
   platform: 20
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/Stage 1.unity
   - Assets/Scenes/Stage 2.unity
   - Assets/Scenes/Stage 3.unity
+  - Assets/Scenes/Stage 4.unity
+  - Assets/Scenes/Stage 5.unity
   playerPath: C:/Users/Joshua/Downloads/Magical-Magnifier

@@ -31,7 +31,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -43,7 +45,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -51,6 +55,13 @@
             "nativeClass": "GlobalGameManager",
             "fullManagedTypeName": "",
             "moduleName": "Core",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "GroundCheck",
+            "moduleName": "",
             "usedInScenes": []
         },
         {
@@ -69,7 +80,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -95,7 +108,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -114,7 +129,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -154,7 +171,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -201,7 +220,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -255,7 +276,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -267,7 +290,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -279,7 +304,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -291,7 +318,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -303,7 +332,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -315,7 +346,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -327,7 +360,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -339,7 +374,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -351,7 +388,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -363,7 +402,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -375,7 +416,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -387,7 +430,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -399,7 +444,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -411,7 +458,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -423,7 +472,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -435,7 +486,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -447,7 +500,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -459,7 +514,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -471,7 +528,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -483,7 +542,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -495,7 +556,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -507,7 +570,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -519,7 +584,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -531,7 +598,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -550,7 +619,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -562,7 +633,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -581,7 +654,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -593,7 +668,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -605,7 +682,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -617,7 +696,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -629,7 +710,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -641,7 +724,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {
@@ -653,7 +738,9 @@
                 "Assets/Scenes/SampleScene.unity",
                 "Assets/Scenes/Stage 1.unity",
                 "Assets/Scenes/Stage 2.unity",
-                "Assets/Scenes/Stage 3.unity"
+                "Assets/Scenes/Stage 3.unity",
+                "Assets/Scenes/Stage 4.unity",
+                "Assets/Scenes/Stage 5.unity"
             ]
         },
         {

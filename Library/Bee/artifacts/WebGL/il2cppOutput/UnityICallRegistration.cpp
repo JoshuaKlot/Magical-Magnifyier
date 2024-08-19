@@ -118,6 +118,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AudioSource_PlayHelper();
 		Register_UnityEngine_AudioSource_PlayHelper();
 
+		//System.Void UnityEngine.AudioSource::SetPitch(UnityEngine.AudioSource,System.Single)
+		void Register_UnityEngine_AudioSource_SetPitch();
+		Register_UnityEngine_AudioSource_SetPitch();
+
 	//End Registrations for type : UnityEngine.AudioSource
 
 	//Start Registrations for type : UnityEngine.Behaviour
@@ -501,6 +505,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Int32 UnityEngine.Debug::ExtractStackTraceNoAlloc(System.Byte*,System.Int32,System.String)
 		void Register_UnityEngine_Debug_ExtractStackTraceNoAlloc();
 		Register_UnityEngine_Debug_ExtractStackTraceNoAlloc();
+
+		//System.Void UnityEngine.Debug::DrawLine_Injected(UnityEngine.Vector3&,UnityEngine.Vector3&,UnityEngine.Color&,System.Single,System.Boolean)
+		void Register_UnityEngine_Debug_DrawLine_Injected();
+		Register_UnityEngine_Debug_DrawLine_Injected();
 
 	//End Registrations for type : UnityEngine.Debug
 
@@ -1710,6 +1718,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_PhysicsScene_Internal_Raycast_Injected();
 		Register_UnityEngine_PhysicsScene_Internal_Raycast_Injected();
 
+		//System.Boolean UnityEngine.PhysicsScene::Query_CapsuleCast_Injected(UnityEngine.PhysicsScene&,UnityEngine.Vector3&,UnityEngine.Vector3&,System.Single,UnityEngine.Vector3&,System.Single,UnityEngine.RaycastHit&,System.Int32,UnityEngine.QueryTriggerInteraction)
+		void Register_UnityEngine_PhysicsScene_Query_CapsuleCast_Injected();
+		Register_UnityEngine_PhysicsScene_Query_CapsuleCast_Injected();
+
 		//System.Int32 UnityEngine.PhysicsScene::Internal_RaycastNonAlloc_Injected(UnityEngine.PhysicsScene&,UnityEngine.Ray&,UnityEngine.RaycastHit[],System.Single,System.Int32,UnityEngine.QueryTriggerInteraction)
 		void Register_UnityEngine_PhysicsScene_Internal_RaycastNonAlloc_Injected();
 		Register_UnityEngine_PhysicsScene_Internal_RaycastNonAlloc_Injected();
@@ -1795,6 +1807,14 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Quaternion_Inverse_Injected();
 
 	//End Registrations for type : UnityEngine.Quaternion
+
+	//Start Registrations for type : UnityEngine.Random
+
+		//System.Single UnityEngine.Random::Range(System.Single,System.Single)
+		void Register_UnityEngine_Random_Range();
+		Register_UnityEngine_Random_Range();
+
+	//End Registrations for type : UnityEngine.Random
 
 	//Start Registrations for type : UnityEngine.RectOffset
 
@@ -2069,6 +2089,10 @@ void RegisterAllStrippedInternalCalls()
 	//End Registrations for type : UnityEngine.ResourcesAPIInternal
 
 	//Start Registrations for type : UnityEngine.Rigidbody
+
+		//System.Void UnityEngine.Rigidbody::get_velocity_Injected(UnityEngine.Vector3&)
+		void Register_UnityEngine_Rigidbody_get_velocity_Injected();
+		Register_UnityEngine_Rigidbody_get_velocity_Injected();
 
 		//System.Void UnityEngine.Rigidbody::set_isKinematic(System.Boolean)
 		void Register_UnityEngine_Rigidbody_set_isKinematic();

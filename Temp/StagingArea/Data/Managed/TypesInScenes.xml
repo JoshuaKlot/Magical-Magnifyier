@@ -1,6 +1,7 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="Beam" preserve="nothing"/>
+		<type fullname="GroundCheck" preserve="nothing"/>
 		<type fullname="Intercatable" preserve="nothing"/>
 		<type fullname="MagnifyingGlass" preserve="nothing"/>
 		<type fullname="MouseMovement" preserve="nothing"/>

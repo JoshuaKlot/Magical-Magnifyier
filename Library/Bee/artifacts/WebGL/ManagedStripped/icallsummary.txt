@@ -19,6 +19,7 @@ UnityEngine.Application::get_isPlaying
 UnityEngine.Application::get_platform
 UnityEngine.AsyncOperation::InternalDestroy
 UnityEngine.AudioSource::PlayHelper
+UnityEngine.AudioSource::SetPitch
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled
 UnityEngine.Behaviour::set_enabled
@@ -101,6 +102,7 @@ UnityEngine.Cursor::SetCursor_Injected
 UnityEngine.Cursor::set_lockState
 UnityEngine.Cursor::get_lockState
 UnityEngine.Debug::ExtractStackTraceNoAlloc
+UnityEngine.Debug::DrawLine_Injected
 UnityEngine.DebugLogHandler::Internal_Log
 UnityEngine.DebugLogHandler::Internal_LogException
 UnityEngine.Display::RelativeMouseAtImpl
@@ -373,6 +375,7 @@ UnityEngine.Physics::get_defaultPhysicsScene_Injected
 UnityEngine.Physics::Internal_RaycastAll_Injected
 UnityEngine.PhysicsScene::Internal_RaycastTest_Injected
 UnityEngine.PhysicsScene::Internal_Raycast_Injected
+UnityEngine.PhysicsScene::Query_CapsuleCast_Injected
 UnityEngine.PhysicsScene::Internal_RaycastNonAlloc_Injected
 UnityEngine.Playables.PlayableHandle::IsValid_Injected
 UnityEngine.Playables.PlayableHandle::GetPlayableType_Injected
@@ -389,6 +392,7 @@ UnityEngine.QualitySettings::get_activeColorSpace
 UnityEngine.Quaternion::AngleAxis_Injected
 UnityEngine.Quaternion::Internal_FromEulerRad_Injected
 UnityEngine.Quaternion::Inverse_Injected
+UnityEngine.Random::Range
 UnityEngine.RectOffset::get_bottom
 UnityEngine.RectOffset::get_horizontal
 UnityEngine.RectOffset::get_left
@@ -447,6 +451,7 @@ UnityEngine.RenderTexture::GetTemporary_Internal_Injected
 UnityEngine.Resources::GetBuiltinResource
 UnityEngine.ResourcesAPIInternal::Load
 UnityEngine.ResourcesAPIInternal::FindShaderByName
+UnityEngine.Rigidbody::get_velocity_Injected
 UnityEngine.Rigidbody::set_isKinematic
 UnityEngine.Rigidbody::set_velocity_Injected
 UnityEngine.SceneManagement.Scene::GetNameInternal
