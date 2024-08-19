@@ -70,6 +70,19 @@ public class Intercatable : MonoBehaviour
         }
     }
 
+    private void MaintainGroundContact()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, groundLayer))
+        {
+            float groundHeight = hit.point.y;
+            float objectHeight = transform.position.y - transform.localScale.y / 2;
+            float difference = groundHeight - objectHeight;
+
+            transform.position += Vector3.up * difference;
+        }
+    }
+
     public void Grow()
     {
         if (transform.localScale.x < upperLimit)
@@ -80,6 +93,8 @@ public class Intercatable : MonoBehaviour
                                         transform.localScale.y + 0.01f,
                                         transform.localScale.z + 0.01f);
             transform.localScale = scale;
+
+            MaintainGroundContact(); // Ensure the object stays on the ground
 
             StartKinematicResetCoroutine();
         }
@@ -95,6 +110,8 @@ public class Intercatable : MonoBehaviour
                                         transform.localScale.y - 0.01f,
                                         transform.localScale.z - 0.01f);
             transform.localScale = scale;
+
+            MaintainGroundContact(); // Ensure the object stays on the ground
 
             StartKinematicResetCoroutine();
         }
