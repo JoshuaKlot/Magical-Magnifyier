@@ -1205,6 +1205,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2012760496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3077455600470920448, guid: 7363ffadafd2e7a43a4144a6d8ef515c, type: 3}
+  m_PrefabInstance: {fileID: 188359940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &608546855440632569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1313,6 +1324,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3052248379503323054, guid: e7f93a30e4a2e9841a432d964c5f89a9, type: 3}
+      propertyPath: FadeToBlack
+      value: 
+      objectReference: {fileID: 2012760496}
     - target: {fileID: 3052248379503323055, guid: e7f93a30e4a2e9841a432d964c5f89a9, type: 3}
       propertyPath: m_Name
       value: Goal
