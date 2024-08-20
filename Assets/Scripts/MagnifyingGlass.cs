@@ -8,6 +8,11 @@ public class MagnifyingGlass : MonoBehaviour
 {
     [SerializeField] private Light MainLight;
     [SerializeField] private Image image;
+    [SerializeField] private AudioSource Grow;
+    [SerializeField] private AudioSource Shrink;
+    [SerializeField] private AudioSource GrowHit;
+    [SerializeField] private AudioSource ShrinkHit;
+
     public GameObject beamGrowPrefab;
     public GameObject beamShrinkPrefab;
     public Transform bulletSpawn;
@@ -33,6 +38,7 @@ public class MagnifyingGlass : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
+            MuteAllSoundsExcept(Grow);
             MainLight.tag = "Grow";
             MainLight.color = Color.green;
             image.color = Color.green;
@@ -43,6 +49,7 @@ public class MagnifyingGlass : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.Mouse1))
         {
+            MuteAllSoundsExcept(Shrink);
             MainLight.tag = "Shrink";
             MainLight.color = Color.magenta;
             image.color = Color.magenta;
@@ -53,10 +60,12 @@ public class MagnifyingGlass : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Mouse2)) // Check if middle mouse button is pressed
         {
+            MuteAllSoundsExcept(null);
             PerformShortRaycast();
         }
         else
         {
+            MuteAllSoundsExcept(null);
             MainLight.enabled = false;
             this.gameObject.GetComponent<Renderer>().material.color = Color.white;
             image.color = Color.white;
@@ -81,15 +90,45 @@ public class MagnifyingGlass : MonoBehaviour
             {
                 if (MainLight.tag == "Grow" && interactable.Shrinkable)
                 {
+                    MuteAllSoundsExcept(GrowHit);
                     interactable.Grow();
+                    if (!GrowHit.isPlaying)
+                    {
+                        GrowHit.Play();
+                    }
                 }
                 else if (MainLight.tag == "Shrink" && interactable.Shrinkable)
                 {
+                    MuteAllSoundsExcept(ShrinkHit);
                     interactable.Shrink();
+                    if (!ShrinkHit.isPlaying)
+                    {
+                        ShrinkHit.Play();
+                    }
+                }
+            }
+            else
+            {
+                if (MainLight.tag == "Grow")
+                {
+                    MuteAllSoundsExcept(Grow);
+                    if (!Grow.isPlaying)
+                    {
+                        Grow.Play();
+                    }
+                }
+                else if (MainLight.tag == "Shrink")
+                {
+                    MuteAllSoundsExcept(Shrink);
+                    if (!Shrink.isPlaying)
+                    {
+                        Shrink.Play();
+                    }
                 }
             }
         }
     }
+
 
     private void PerformShortRaycast()
     {
@@ -108,4 +147,13 @@ public class MagnifyingGlass : MonoBehaviour
             }
         }
     }
+
+    private void MuteAllSoundsExcept(AudioSource activeSound)
+    {
+        Grow.mute = activeSound != Grow;
+        Shrink.mute = activeSound != Shrink;
+        GrowHit.mute = activeSound != GrowHit;
+        ShrinkHit.mute = activeSound != ShrinkHit;
+    }
 }
+

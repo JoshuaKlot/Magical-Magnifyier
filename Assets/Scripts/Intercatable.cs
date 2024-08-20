@@ -8,6 +8,8 @@ public class Intercatable : MonoBehaviour
     [SerializeField] private float weightMultiplier;
     [SerializeField] private float upperLimit;
     [SerializeField] private float lowerLimit;
+    [SerializeField] private AudioSource pushed;
+    [SerializeField] private AudioSource pushedIntoWater;
     [SerializeField] private float thresholdMass;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private LayerMask groundLayer;
@@ -182,10 +184,19 @@ public class Intercatable : MonoBehaviour
             StopMovement();
         }
     }
+
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Water"))
+        {
+            pushedIntoWater.Play();
+        }
+    }
     public void SimulateCollision(GameObject colliderObject)
     {
         if (colliderObject.CompareTag("Player") && Pushable)
         {
+            pushed.Play();
             pushDirection = GetPushDirection(colliderObject.transform.position);
             startPosition = transform.position;
             MoveBoxInDirection(pushDirection);
@@ -215,6 +226,7 @@ public class Intercatable : MonoBehaviour
 
     private void StopMovement()
     {
+        pushed.Stop();
         targetVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
         isPushing = false;
