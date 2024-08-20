@@ -43,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
         // Play fall sound when landing
         if (isGrounded && !wasGrounded)
         {
-            fall.Play();
+            if(!fall.isPlaying)
+                fall.Play();
         }
 
         // Resetting the Default Velocity
